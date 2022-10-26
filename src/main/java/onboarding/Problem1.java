@@ -34,4 +34,20 @@ class Problem1 {
         }
         return totalAddNum;
     }
+
+    public static int multiplyNum(int pageNum) {
+        List<Integer> placeValue = new ArrayList<Integer>() {};
+
+        int tempPageNum = pageNum;
+        while(tempPageNum != 0) {
+            placeValue.add(tempPageNum % 10);
+            tempPageNum = tempPageNum/10;
+        }
+
+        int totalMultiplyNum = 1;
+        for(int i=0; i<placeValue.size(); i++) {
+            totalMultiplyNum *= placeValue.get(i);
+        }
+        return totalMultiplyNum;
+    }
 }
