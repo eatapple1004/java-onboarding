@@ -32,8 +32,6 @@ class Problem1 {
         for(int i=0; i<placeValue.size(); i++) {
             totalAddNum += placeValue.get(i);
         }
-
         return totalAddNum;
     }
-
 }
