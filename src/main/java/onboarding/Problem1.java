@@ -14,20 +14,24 @@ class Problem1 {
     public static int solution(List<Integer> pobi, List<Integer> crong) {
 
         int answer = Integer.MAX_VALUE;
-        int pobiFinalScore;
-        int crongFinalScore;
-        List<Integer> pobiNums  = new ArrayList<Integer>();
-        List<Integer> crongNums = new ArrayList<Integer>();;
 
+        List<Integer> playerTotalScores = new ArrayList<Integer>();
+        List<List<Integer>> allPlayerPageInfo = new ArrayList<List<Integer>>();
 
-        for(int i=0; i < pobi.size(); i++) {
-            pobiNums.add(addNum(pobi.get(i)));
-            pobiNums.add(multiplyNum(pobi.get(i)));
+        allPlayerPageInfo.add(pobi);
+        allPlayerPageInfo.add(crong);
+
+        for(int i=0; i<allPlayerPageInfo.size(); i++) {
+            List<Integer> eachPageScores = new ArrayList<Integer>();
+            List<Integer> singlePlayerPages = allPlayerPageInfo.get(i);
+            for(int j=0; j < singlePlayerPages.size(); j++) {
+                int pageScore;
+                pageScore = getBiggerNum(addNum(singlePlayerPages.get(j)), multiplyNum(singlePlayerPages.get(j)));
+                eachPageScores.add(pageScore);
+            }
+            playerTotalScores.add(getBiggerNum(eachPageScores.get(0),eachPageScores.get(1)));
         }
-        for(int i=0; i < crong.size(); i++) {
-            crongNums.add(addNum(pobi.get(i)));
-            crongNums.add(multiplyNum(pobi.get(i)));
-        }
+
 
 
 
@@ -66,7 +70,7 @@ class Problem1 {
         return totalMultiplyNum;
     }
 
-    public static int compareNums (int num1, int num2) {
+    public static int getBiggerNum (int num1, int num2) {
         if(num1 > num2)       {return num1;}
         else if(num1 < num2)  {return num2;}
         else if(num1 == num2) {return num1;}
