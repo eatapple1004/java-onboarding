@@ -13,14 +13,19 @@ import java.util.List;
  */
 class Problem1 {
     public static int solution(List<Integer> pobi, List<Integer> crong) {
-
         int answer = Integer.MAX_VALUE;
 
         List<Integer> playerTotalScores = new ArrayList<Integer>();
         List<List<Integer>> allPlayerPageInfo = new ArrayList<List<Integer>>();
-
         allPlayerPageInfo.add(pobi);
         allPlayerPageInfo.add(crong);
+
+        try {
+            checkInputData(allPlayerPageInfo);
+        }
+        catch(ArithmeticException e) {
+            return -1;
+        }
 
         for(int i=0; i<allPlayerPageInfo.size(); i++) {
             List<Integer> eachPageScores = new ArrayList<Integer>();
@@ -82,5 +87,20 @@ class Problem1 {
         else                             {return -1;}
     }
 
+    public static void checkInputData(List<List<Integer>> allPlayerPageInfo) {
+        for(int i=0; i<allPlayerPageInfo.size(); i++) {
+            List<Integer> singlePlayerPages = allPlayerPageInfo.get(i);
 
+            if(singlePlayerPages.get(0)%2 != 0) { //왼쪽 페이지가 짝수일 경우
+                throw new ArithmeticException();
+            }
+            else if(singlePlayerPages.get(1)%2 != 0) { //오른쪽 페이지가 홀수일 경우
+                throw new ArithmeticException();
+            }
+            else if(singlePlayerPages.get(1) - singlePlayerPages.get(0) != 1) {
+                // 한 플레이어의 두 페이지의 차가 1이 아닐 경우
+                throw new ArithmeticException();
+            }
+        }
+    }
 }
