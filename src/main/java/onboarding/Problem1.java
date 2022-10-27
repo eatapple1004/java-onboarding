@@ -66,7 +66,18 @@ class Problem1 {
         return totalMultiplyNum;
     }
 
-
+    public static int compareNums (int num1, int num2) {
+        if(num1 > num2)       {return num1;}
+        else if(num1 < num2)  {return num2;}
+        else if(num1 == num2) {return num1;}
+        else                  {return -1;}
+    }
+    public static int getWinner (int pobiScore, int crongScore) {
+        if(pobiScore > crongScore)       {return 1;}
+        else if(pobiScore < crongScore)  {return 2;}
+        else if(pobiScore == crongScore) {return 0;}
+        else                             {return -1;}
+    }
 
 
 }
