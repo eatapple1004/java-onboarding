@@ -14,17 +14,20 @@ class Problem1 {
     public static int solution(List<Integer> pobi, List<Integer> crong) {
 
         int answer = Integer.MAX_VALUE;
-
-        List<HashMap<String, List<Integer>>> nameAndPageList = new ArrayList<>();
-        HashMap<String, List<Integer>> pobiPageInfo = new HashMap<>();
-        HashMap<String, List<Integer>> crongPageInfo = new HashMap<>();
-        pobiPageInfo.put("pobi", pobi);
-        crongPageInfo.put("crong", crong);
-        nameAndPageList.add(pobiPageInfo);
-        nameAndPageList.add(crongPageInfo);
-
         int pobiFinalScore;
         int crongFinalScore;
+        List<Integer> pobiNums  = new ArrayList<Integer>();
+        List<Integer> crongNums = new ArrayList<Integer>();;
+
+
+        for(int i=0; i < pobi.size(); i++) {
+            pobiNums.add(addNum(pobi.get(i)));
+            pobiNums.add(multiplyNum(pobi.get(i)));
+        }
+        for(int i=0; i < crong.size(); i++) {
+            crongNums.add(addNum(pobi.get(i)));
+            crongNums.add(multiplyNum(pobi.get(i)));
+        }
 
 
 
