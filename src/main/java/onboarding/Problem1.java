@@ -1,14 +1,15 @@
 package onboarding;
 
 import java.util.ArrayList;
-import java.util.HashMap;
 import java.util.List;
 
 /*
     기능 구현 목록
-    1. 덧셈 함수
-    2. 곱셈 함수
-    3. 비교 함수
+    1. 페이지 기반 덧셈 함수
+    2. 페이지 기반 곱셈 함수
+    3. 더 큰수를 구하는 함수
+    4. 승자를 구하는 함수
+    5. 예외 처리
  */
 class Problem1 {
     public static int solution(List<Integer> pobi, List<Integer> crong) {
@@ -31,9 +32,7 @@ class Problem1 {
             }
             playerTotalScores.add(getBiggerNum(eachPageScores.get(0),eachPageScores.get(1)));
         }
-
-
-
+        answer = getWinner(playerTotalScores.get(0),playerTotalScores.get(1));
 
         return answer;
     }
