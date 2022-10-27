@@ -83,7 +83,7 @@ class Problem1 {
         for(int i=0; i<allPlayerPageInfo.size(); i++) {
             List<Integer> singlePlayerPages = allPlayerPageInfo.get(i);
 
-            if(singlePlayerPages.get(0)%2 != 0) { //왼쪽 페이지가 짝수일 경우
+            if(singlePlayerPages.get(0)%2 != 1) { //왼쪽 페이지가 짝수일 경우
                 throw new ArithmeticException();
             }
             else if(singlePlayerPages.get(1)%2 != 0) { //오른쪽 페이지가 홀수일 경우
