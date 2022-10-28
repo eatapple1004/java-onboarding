@@ -3,6 +3,12 @@ package onboarding;
 public class Problem3 {
     public static int solution(int number) {
         int answer = 0;
+
+        for(int i=1; i<=number; i++) {
+            if(checkPlaceValue(i)){
+                answer += calClapNum(i);
+            }
+        }
         return answer;
     }
 
@@ -16,10 +22,10 @@ public class Problem3 {
         int tempNum = num;
         while(tempNum != 0) {
             int placeValue = tempNum % 10;
-            tempNum = tempNum/10;
             if(placeValue == 3 || placeValue == 6 || placeValue == 9) {
                 return true;
             }
+            tempNum = tempNum/10;
         }
         return false;
     }
