@@ -2,6 +2,7 @@ package onboarding;
 
 public class Problem2 {
     public static String solution(String cryptogram) {
+        String answer = "answer";
 
         try {
             checkInputData(cryptogram);
@@ -10,7 +11,12 @@ public class Problem2 {
             return e.getMessage();
         }
 
-        String answer = "answer";
+        boolean overlapYN = true;
+        char[] charCryptogram = cryptogram.toCharArray();
+
+        while(overlapYN) {
+
+        }
 
         return answer;
     }
@@ -19,6 +25,21 @@ public class Problem2 {
         if(inputString.length() > 1000 || inputString.length() < 1) {
             throw new ArithmeticException("length of string is over 1000 or less then 1");
         }
+    }
+
+    public static boolean checkOverlap(char[] charCryptogram) {
+        for(int i=0; i< charCryptogram.length-1; i++) {
+            char currentChar = charCryptogram[i];
+            char nextChar = charCryptogram[i+1];
+
+            if(currentChar == nextChar) {
+                return true;
+            }
+            else {
+                continue;
+            }
+        }
+        return false;
     }
 
 }
