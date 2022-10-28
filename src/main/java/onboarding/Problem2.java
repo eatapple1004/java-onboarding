@@ -1,5 +1,8 @@
 package onboarding;
 
+import java.util.ArrayList;
+import java.util.List;
+
 public class Problem2 {
     public static String solution(String cryptogram) {
         String answer = "answer";
@@ -12,10 +15,17 @@ public class Problem2 {
         }
 
         boolean overlapYN = true;
-        char[] charCryptogram = cryptogram.toCharArray();
+        List<Character> cryptogramCharList = new ArrayList<Character>();
+        for(char c : cryptogram.toCharArray()){
+            cryptogramCharList.add(c);
+        }
+
 
         while(overlapYN) {
 
+            if(!checkOverlap(cryptogramCharList)){
+                overlapYN = false;
+            }
         }
 
         return answer;
@@ -27,10 +37,10 @@ public class Problem2 {
         }
     }
 
-    public static boolean checkOverlap(char[] charCryptogram) {
-        for(int i=0; i< charCryptogram.length-1; i++) {
-            char currentChar = charCryptogram[i];
-            char nextChar = charCryptogram[i+1];
+    public static boolean checkOverlap(List<Character> cryptogramChar) {
+        for(int i=0; i< cryptogramChar.size()-1; i++) {
+            char currentChar = cryptogramChar.get(i);
+            char nextChar = cryptogramChar.get(i+1);
 
             if(currentChar == nextChar) {
                 return true;
@@ -41,5 +51,20 @@ public class Problem2 {
         }
         return false;
     }
+
+    public static List<Character> removeOverlapChar(List<Character> cryptogramChar) {
+        for(int i=0; i<cryptogramChar.size()-1; i++) {
+            char currentChar = cryptogramChar.get(i);
+            char nextChar = cryptogramChar.get(i+1);
+
+            if(currentChar == nextChar) {
+                cryptogramChar.remove(i);
+                cryptogramChar.remove(i+1);
+                i--;
+            }
+        }
+        return cryptogramChar;
+    }
+
 
 }
