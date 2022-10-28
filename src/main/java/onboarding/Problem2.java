@@ -14,7 +14,6 @@ public class Problem2 {
             return e.getMessage();
         }
 
-
         List<Character> cryptogramCharList = new ArrayList<Character>();
         for(char c : cryptogram.toCharArray()){
             cryptogramCharList.add(c);
@@ -27,14 +26,7 @@ public class Problem2 {
         }
 
         answer = generateAnswer(cryptogramCharList);
-
         return answer;
-    }
-
-    public static void checkInputData(String inputString){
-        if(inputString.length() > 1000 || inputString.length() < 1) {
-            throw new ArithmeticException("length of string is over 1000 or less then 1");
-        }
     }
 
     public static boolean checkOverlap(List<Character> cryptogramChar) {
@@ -74,4 +66,9 @@ public class Problem2 {
         return answer;
     }
 
+    public static void checkInputData(String inputString){
+        if(inputString.length() > 1000 || inputString.length() < 1) {
+            throw new ArithmeticException("length of string is over 1000 or less then 1");
+        }
+    }
 }
