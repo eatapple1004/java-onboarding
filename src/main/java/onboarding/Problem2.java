@@ -51,7 +51,7 @@ public class Problem2 {
 
             if(currentChar == nextChar) {
                 cryptogramChar.remove(i);
-                cryptogramChar.remove(i+1);
+                cryptogramChar.remove(i);
                 i--;
             }
         }
