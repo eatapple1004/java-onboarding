@@ -14,19 +14,19 @@ public class Problem2 {
             return e.getMessage();
         }
 
-        boolean overlapYN = true;
+
         List<Character> cryptogramCharList = new ArrayList<Character>();
         for(char c : cryptogram.toCharArray()){
             cryptogramCharList.add(c);
         }
 
-
+        boolean overlapYN = checkOverlap(cryptogramCharList);
         while(overlapYN) {
-
-            if(!checkOverlap(cryptogramCharList)){
-                overlapYN = false;
-            }
+            cryptogramCharList = removeOverlapChar(cryptogramCharList);
+            overlapYN = checkOverlap(cryptogramCharList);
         }
+
+        answer = generateAnswer(cryptogramCharList);
 
         return answer;
     }
@@ -66,5 +66,12 @@ public class Problem2 {
         return cryptogramChar;
     }
 
+    public static String generateAnswer(List<Character> cryptogramCharList) {
+        String answer = "";
+        for(char c : cryptogramCharList) {
+            answer += c;
+        }
+        return answer;
+    }
 
 }
