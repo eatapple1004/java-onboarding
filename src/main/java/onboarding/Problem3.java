@@ -12,5 +12,16 @@ public class Problem3 {
         }
     }
 
-    
+    public static boolean checkPlaceValue(int num) {
+        int tempNum = num;
+        while(tempNum != 0) {
+            int placeValue = tempNum % 10;
+            tempNum = tempNum/10;
+            if(placeValue == 3 || placeValue == 6 || placeValue == 9) {
+                return true;
+            }
+        }
+        return false;
+    }
+
 }
