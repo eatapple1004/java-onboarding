@@ -17,4 +17,14 @@ public class Problem4 {
         return wordCharList;
     }
 
+
+    public static List<Integer> Char2ASCII(List<Character> wordCharList) {
+        List<Integer> wordASCIIList = new ArrayList<Integer>();
+        for(char c : wordCharList) {
+            int charASCII = (byte)c;
+            wordASCIIList.add(charASCII);
+        }
+        return wordASCIIList;
+    }
+
 }
