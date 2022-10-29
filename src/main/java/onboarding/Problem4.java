@@ -44,4 +44,12 @@ public class Problem4 {
         }
         return convertedASCIIList;
     }
+
+    public static String ascii2String(List<Integer> convertedASCIIList) {
+        String convertedString = "";
+        for(int ascii : convertedASCIIList) {
+            convertedString += Character.toString(ascii);
+        }
+        return convertedString;
+    }
 }
