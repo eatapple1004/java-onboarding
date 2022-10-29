@@ -6,7 +6,16 @@ import java.util.List;
 public class Problem4 {
     public static String solution(String word) {
         String answer = "";
+        answer = oppositeString(word);
         return answer;
+    }
+
+    public static String oppositeString(String word){
+        List<Character> wordCharList = string2Char(word);
+        List<Integer> wordASCIIList = char2ASCII(wordCharList);
+        List<Integer> convertedASCIIList = convertASCII(wordASCIIList);
+        String converedString = ascii2String(convertedASCIIList);
+        return converedString;
     }
 
     public static List<Character> string2Char(String word) {
