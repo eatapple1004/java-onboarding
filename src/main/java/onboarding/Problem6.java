@@ -3,6 +3,7 @@ package onboarding;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
+import java.util.stream.Collectors;
 
 public class Problem6 {
     static List<String> partNameList        = new ArrayList<String>();
@@ -74,15 +75,7 @@ public class Problem6 {
     }
 
     public static void removeOverlapPartNameList() {
-        for(int i=0; i<overlapPartNameList.size();i++) {
-            String currentPartName = overlapPartNameList.get(i);
-            for(int j=i+1; j<overlapPartNameList.size(); j++) {
-                if(currentPartName.equals(overlapPartNameList.get(j))) {
-                    overlapPartNameList.remove(j);
-                    j--;
-                }
-            }
-        }
+        overlapPartNameList = overlapPartNameList.stream().distinct().collect(Collectors.toList());
     }
 
 
