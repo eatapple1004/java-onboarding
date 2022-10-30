@@ -20,4 +20,11 @@ public class Problem6 {
             nameList.add(form.get(1));
         }
     }
+
+    public static void getEmailList(List<List<String>> forms) {
+        for (List<String> form : forms) {
+            int dividePoint = form.get(0).indexOf("@");
+            emailList.add(form.get(0).substring(0, dividePoint-1));
+        }
+    }
 }
