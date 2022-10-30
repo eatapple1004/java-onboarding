@@ -1,6 +1,7 @@
 package onboarding;
 
 import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.List;
 
 public class Problem6 {
@@ -11,6 +12,7 @@ public class Problem6 {
 
     static List<String> overlapNameEmailList = new ArrayList<String>();
     static List<Integer> overlapNameIndexList   = new ArrayList<Integer>();
+    static List<String> sortedEmailList = new ArrayList<String>();
     public static List<String> solution(List<List<String>> forms) {
         List<String> answer = List.of("answer");
 
@@ -80,6 +82,20 @@ public class Problem6 {
             overlapNameEmailList.add(emailList.get(index));
         }
     }
+
+    public static void sortEmailList() {
+        List<String> sortEmailList= new ArrayList<String>();
+        String[] emailList = new String[overlapNameEmailList.size()];
+        for(int i=0; i<overlapNameEmailList.size(); i++) {
+            emailList[i] = overlapNameEmailList.get(i);
+        }
+        Arrays.sort(emailList);
+        for(int i=0; i<emailList.length; i++) {
+            sortEmailList.add(emailList[i]);
+        }
+        sortedEmailList = sortEmailList;
+    }
+
 
 
 
