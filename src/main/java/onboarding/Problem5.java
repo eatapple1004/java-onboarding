@@ -9,6 +9,7 @@ public class Problem5 {
     static final int[] moneyUnits = {50000,10000,5000,1000,500,100,50,10,1};
     public static List<Integer> solution(int money) {
         List<Integer> answer = Collections.emptyList();
+        answer = getAnswer(money);
         return answer;
     }
 
@@ -19,7 +20,7 @@ public class Problem5 {
 
 
     public static int getRemainder(int money, int moneyUnit) {
-        int remainer = money/moneyUnit;
+        int remainer = money % moneyUnit;
         return remainer;
     }
 
