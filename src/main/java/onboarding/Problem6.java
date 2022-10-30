@@ -15,4 +15,9 @@ public class Problem6 {
         return answer;
     }
 
+    public static void getNameList(List<List<String>> forms) {
+        for (List<String> form : forms) {
+            nameList.add(form.get(1));
+        }
+    }
 }
