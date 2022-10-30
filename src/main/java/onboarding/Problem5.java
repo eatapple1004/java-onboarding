@@ -13,4 +13,10 @@ public class Problem5 {
         int quotient = money/moneyUnit;
         return quotient;
     }
+
+
+    public static int getRemainder(int money, int moneyUnit) {
+        int remainer = money/moneyUnit;
+        return remainer;
+    }
 }
