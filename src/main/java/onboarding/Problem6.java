@@ -27,4 +27,12 @@ public class Problem6 {
             emailList.add(form.get(0).substring(0, dividePoint-1));
         }
     }
+
+    public static String getPartName(String fullName, int i) {
+        String currentName ="";
+        currentName += fullName.charAt(i);
+        currentName += fullName.charAt(i+1);
+        return currentName;
+    }
+
 }
