@@ -35,4 +35,12 @@ public class Problem6 {
         return currentName;
     }
 
+    public static void getPartNameList(List<String> nameList) {
+        for(String name : nameList) {
+            for(int i=0; i<name.length()-1; i++) {
+                partNameList.add(getPartName(name, i));
+            }
+        }
+    }
+
 }
