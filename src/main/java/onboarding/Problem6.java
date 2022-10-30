@@ -43,4 +43,19 @@ public class Problem6 {
         }
     }
 
+    public static void getOverlapPartNameList() {
+        for(int i=0; i< partNameList.size(); i++) {
+            String currentPartName = partNameList.get(i);
+            for(int j=i+1; j<partNameList.size(); j++) {
+                String checkPartName = partNameList.get(j);
+                if(currentPartName.equals(checkPartName)) {
+                    overlapPartNameList.add(currentPartName);
+                    partNameList.remove(j);
+                    j--;
+                }
+            }
+        }
+    }
+
+
 }
