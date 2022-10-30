@@ -15,8 +15,21 @@ public class Problem6 {
     static List<String> sortedEmailList = new ArrayList<String>();
     public static List<String> solution(List<List<String>> forms) {
         List<String> answer = List.of("answer");
+        getAnswer(forms);
+        return sortedEmailList;
+    }
 
-        return answer;
+    public static void getAnswer(List<List<String>> forms) {
+
+        getNameList(forms);
+        getEmailList(forms);
+        getPartNameList(nameList);
+        getOverlapPartNameList();
+        removeOverlapPartNameList();
+        getOverlapNameIndexList();
+        getOverlapNameEmailList();
+        sortEmailList();
+
     }
 
     public static void getNameList(List<List<String>> forms) {
@@ -27,8 +40,9 @@ public class Problem6 {
 
     public static void getEmailList(List<List<String>> forms) {
         for (List<String> form : forms) {
-            int dividePoint = form.get(0).indexOf("@");
-            emailList.add(form.get(0).substring(0, dividePoint-1));
+            //int dividePoint = form.get(0).indexOf("@");
+            //emailList.add(form.get(0).substring(0, dividePoint-1));
+            emailList.add(form.get(0));
         }
     }
 
@@ -54,12 +68,23 @@ public class Problem6 {
                 String checkPartName = partNameList.get(j);
                 if(currentPartName.equals(checkPartName)) {
                     overlapPartNameList.add(currentPartName);
-                    partNameList.remove(j);
+                }
+            }
+        }
+    }
+
+    public static void removeOverlapPartNameList() {
+        for(int i=0; i<overlapPartNameList.size();i++) {
+            String currentPartName = overlapPartNameList.get(i);
+            for(int j=i+1; j<overlapPartNameList.size(); j++) {
+                if(currentPartName.equals(overlapPartNameList.get(j))) {
+                    overlapPartNameList.remove(j);
                     j--;
                 }
             }
         }
     }
+
 
     public static void getOverlapNameIndexList() {
         for(String partName : overlapPartNameList) {
