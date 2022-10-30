@@ -8,7 +8,7 @@ public class Problem6 {
     static List<String> overlapPartNameList = new ArrayList<String>();
     static List<String> nameList            = new ArrayList<String>();
     static List<String> emailList           = new ArrayList<String>();
-    static List<Integer> overlapNameIndex   = new ArrayList<Integer>();
+    static List<Integer> overlapNameIndexList   = new ArrayList<Integer>();
     public static List<String> solution(List<List<String>> forms) {
         List<String> answer = List.of("answer");
 
@@ -52,6 +52,22 @@ public class Problem6 {
                     overlapPartNameList.add(currentPartName);
                     partNameList.remove(j);
                     j--;
+                }
+            }
+        }
+    }
+
+    public static void getOverlapNameIndex() {
+        for(String partName : overlapPartNameList) {
+            for(int i=0;i<nameList.size(); i++) {
+                String currentName = nameList.get(i);
+                for(int j=0; j<currentName.length()-1; j++) {
+                    if(partName.equals(getPartName(currentName, j))){
+                        overlapNameIndexList.add(i);
+                    }
+                    else {
+                        continue;
+                    }
                 }
             }
         }
