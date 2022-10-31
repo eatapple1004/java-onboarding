@@ -16,32 +16,4 @@ public class Problem7 {
         return answer;
     }
 
-    public static List<String> removeOverlapData(List<String> list) {
-        List<String> newList = list;
-        newList.stream().distinct().collect(Collectors.toList());
-        return newList;
-    }
-
-
-    public static void setFriendList(List<List<String>> friends) {
-        for(List<String> friendInfo : friends) {
-            friendList.add(friendInfo.get(0));
-        }
-        friendList = removeOverlapData(friendList);
-    }
-
-    public static void setRelateFriendList(List<List<String>> friends) {
-        for(List<String> friendInfo : friends) {
-            relateFriendList.add(friendInfo.get(1));
-        }
-        relateFriendList = removeOverlapData(relateFriendList);
-        relateFriendList = subtrackList(relateFriendList, friendList);
-    }
-
-    public static List<String> subtrackList(List<String> baseList, List<String> subtrackList) {
-        List<String> returnList = baseList;
-        returnList.removeAll(Arrays.asList(subtrackList));
-        return returnList;
-    }
-
 }
