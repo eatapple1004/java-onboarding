@@ -26,6 +26,7 @@ public class Problem7 {
         for(List<String> friendInfo : friends) {
             friendList.add(friendInfo.get(0));
         }
+        friendList = removeOverlapData(friendList);
     }
 
 
