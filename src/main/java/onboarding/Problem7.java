@@ -1,6 +1,7 @@
 package onboarding;
 
 import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.Collections;
 import java.util.List;
 import java.util.stream.Collectors;
@@ -34,9 +35,14 @@ public class Problem7 {
             relateFriendList.add(friendInfo.get(1));
         }
         relateFriendList = removeOverlapData(relateFriendList);
+        relateFriendList = subtrackList(relateFriendList, friendList);
     }
 
-
+    public static List<String> subtrackList(List<String> baseList, List<String> subtrackList) {
+        List<String> returnList = baseList;
+        returnList.removeAll(Arrays.asList(subtrackList));
+        return returnList;
+    }
 
 
 }
