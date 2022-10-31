@@ -29,6 +29,13 @@ public class Problem7 {
         friendList = removeOverlapData(friendList);
     }
 
+    public static void setRelateFriendList(List<List<String>> friends) {
+        for(List<String> friendInfo : friends) {
+            relateFriendList.add(friendInfo.get(1));
+        }
+        relateFriendList = removeOverlapData(relateFriendList);
+    }
+
 
 
 
